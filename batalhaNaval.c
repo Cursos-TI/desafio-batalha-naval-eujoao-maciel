@@ -24,7 +24,7 @@ int main() {
     }
 
     // declaração navio (vertical)
-    for (int j = 7; j < 8; j++) {
+    for (int j = 8; j < 9; j++) {
         for (int i = 5; i <=7; i++) {
             tabuleiro[i][j] = 3;
         }
@@ -39,11 +39,59 @@ int main() {
         }
     }
 
-    // declaração do segundo navio na diagonal
+    // declaração da saegunda diagonal
     for (int i = 6; i < 9; i++) {
         for (int j = 0; j < 10; j++) {
             if (i + j == 9) {
                 tabuleiro[i][j] = 3;
+            }
+        }
+    }
+
+    // exibição cone
+    for (int i = 7; i < 10; i++) {
+        for (int j = 3; j < 8; j++) {
+            if (i == 9) {
+                tabuleiro[i][j] = 1;
+            } else if (i == 7) {
+                if ( j == 5) {
+                    tabuleiro[i][j] = 1;
+                } else {
+                    tabuleiro[i][j] = 0;
+                }
+            } else if (i == 8) {
+                if (j == 3 || j == 7) {
+                    tabuleiro[i][j] = 0;
+                } else {
+                    tabuleiro[i][j] = 1;
+                }
+            }
+        }
+    }
+
+    // exibição cruz
+    for (int i = 3; i < 6; i++) {
+        for (int j = 2; j < 7; j++) {
+            if (i == 4) {
+                tabuleiro[i][j] = 1;
+            }
+            if ( j == 4 ) {
+                tabuleiro[i][j] = 1;
+            }
+        }
+    }
+
+    // exibição octaedro
+    for (int i = 0; i < 3; i++) {
+        for (int j = 5; j < 8; j++) {
+            if ( i == 1 ) {
+                tabuleiro[i][j] = 1;
+            } else {
+                if ( j == 6 ) {
+                    tabuleiro[i][j] = 1;
+                } else {
+                    tabuleiro[i][j] = 0;
+                }
             }
         }
     }
